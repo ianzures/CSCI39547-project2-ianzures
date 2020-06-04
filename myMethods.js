@@ -17,6 +17,18 @@ Array.prototype.myMap = function(callback){
 	return mappedArray;
 }
 
+Array.prototype.myFilter = function(condition){
+	let filtered = [];
+	for(let i = 0; i < this.length; i++){
+		if(this[i] === condition){
+			filtered.push(this[i]);
+		}
+	}
+
+	return filtered;
+}
+
+
 function testMyMethod(){
 
 	/*TEST MYEACH()
@@ -34,7 +46,7 @@ function testMyMethod(){
 		alert(k[i]);
 	}
 	*/
-	
+
 	/*TEST MYFILTER()
 	let arr = ["Trigo","Migo", "Shego"];
 	let filt = arr.myFilter(word => word.length > 4);
@@ -56,17 +68,7 @@ function testMyMethod(){
 
 
 
-function myFilter(){
 
-	let filtered = [];
-	for(let i = 0; i < this.length; i++){
-		if(this[i] === condition){
-			filtered.push(this[i]);
-		}
-	}
-
-	return filtered;
-}
 
 function myIncludes(target,fromIn = 0){
 	while(fromIn < this.length){
