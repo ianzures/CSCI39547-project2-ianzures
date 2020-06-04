@@ -8,14 +8,33 @@ Array.prototype.myEach = function(callback, index = 0){
 	}
 }
 
+Array.prototype.myMap = function(callback){
+	let mappedArray = [];
+	for(let i = 0; i < this.length;i++){
+		let num = callback(this[i]);
+		mappedArray.push(num);
+	}
+	return mappedArray;
+}
+
 function testMyMethod(){
 
-	/*TEST MYEACH()*/
+	/*TEST MYEACH()
 	[1,2,3].myEach(function(x){
 			alert(square(x));
 	}, 1)
-	
+	*/
 
+	/*TEST MYMAP()
+	let k = [1,2,3].myMap(function(x){
+		x * 2;
+	});
+
+	for(let i = 0; i < k.length; i++){
+		alert(k[i]);
+	}
+	*/
+	
 	/*TEST MYFILTER()
 	let arr = ["Trigo","Migo", "Shego"];
 	let filt = arr.myFilter(word => word.length > 4);
@@ -34,8 +53,7 @@ function testMyMethod(){
 
 
 /*
-function myMap(arg){
-}
+
 
 
 function myFilter(){
