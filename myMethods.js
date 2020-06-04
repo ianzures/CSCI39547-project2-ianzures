@@ -20,7 +20,7 @@ Array.prototype.myMap = function(callback){
 Array.prototype.myFilter = function(condition){
 	let filtered = [];
 	for(let i = 0; i < this.length; i++){
-		if(this[i] === condition){
+		if(condition(this[i])){
 			filtered.push(this[i]);
 		}
 	}
@@ -28,6 +28,14 @@ Array.prototype.myFilter = function(condition){
 	return filtered;
 }
 
+Array.prototype.mySome = function(callback){
+	for(let i = 0; i < this.length; i++){
+		if(callback(this[i])){
+			return true;
+		}
+	}
+	return false;
+}
 
 function testMyMethod(){
 
@@ -80,8 +88,7 @@ function myIncludes(target,fromIn = 0){
 	return false;
 }
 
-function mySome(arg){
-}
+
 
 function myEvery(arg){
 }
