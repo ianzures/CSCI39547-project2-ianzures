@@ -65,6 +65,31 @@ Array.prototype.myIndexOf = function(target, fromIn = 0){
 	return -1;
 }
 
+Array.prototype.myPush = function(element, ... els){
+	for(int i = 0; i < arguments.length; i++){
+		this[this.length+i] = arguments[i];
+	}
+	return this.length;
+}
+
+Array.prototype.myLastIndexOf = function(target, fromIn = this.length){
+	for(let i = fromIn; i >= 0; i--){
+		if(this[i] === target){
+			return i;
+		}
+	}
+	return -1;
+}
+
+Array.prototype.myReduce = function(callback){
+	var k; 
+	for(let i = 0; i < this.length; i++){
+		k += callback[this[i]];
+	}
+	return k;
+}
+
+
 function testMyMethod(){
 
 	/*TEST MYEACH()
@@ -101,30 +126,6 @@ function testMyMethod(){
 
 
 /*
-
-
-
-
-
-
-
-
-
-
-
-function myReduce(arg){
-}
-*/
-
-
-/*
-
-
-function myPush(arg){
-}
-
-function myUnshift(arg){
-}
 
 function grabKeys(arg){
 	A way of organizing data using key/value pairs.
