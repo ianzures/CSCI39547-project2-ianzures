@@ -1,25 +1,63 @@
-function show_random_number(){
-	var random_number = Math.random(); // generate random number between 0 and 1
-  	document.write(random_number);
- }
-
- const square = function(x) {
- 	document.write(x*x);
+function square(x){
 	return x * x;
-};
+}
 
-/*
-
-function myEach(arg){
-	for(var i = 0; i < arg.length(); i++){
-	
+Array.prototype.myEach = function(callback, index = 0){
+	for(let i = index; i < this.length; i++){
+		callback(this[i]);
 	}
 }
 
+function testMyMethod(){
+
+	/*TEST MYEACH()*/
+	[1,2,3].myEach(function(x){
+			alert(square(x));
+	}, 1)
+	
+
+	/*TEST MYFILTER()
+	let arr = ["Trigo","Migo", "Shego"];
+	let filt = arr.myFilter(word => word.length > 4);
+	document.getElementById("demo").innerHTML = filt;
+	*/
+
+	/*TEST MYINCLUDES()
+	let arr2 = [1,2,3,4,5]
+	if(arr2.myIncludes(3)){
+		document.getElementById("demo").innerHTML = "true";
+	}
+	*/
+ }
+
+
+
+
+/*
 function myMap(arg){
 }
 
-function myFilter(arg){
+
+function myFilter(){
+
+	let filtered = [];
+	for(let i = 0; i < this.length; i++){
+		if(this[i] === condition){
+			filtered.push(this[i]);
+		}
+	}
+
+	return filtered;
+}
+
+function myIncludes(target,fromIn = 0){
+	while(fromIn < this.length){
+		if(this[fromIn] === target){
+			return true;
+		}
+		fromIn++;
+	}
+	return false;
 }
 
 function mySome(arg){
@@ -30,11 +68,12 @@ function myEvery(arg){
 
 function myReduce(arg){
 }
+*/
 
-function myIncludes(arg){
-}
 
+/*
 function myIndexOf(arg){
+
 }
 
 function myPush(arg){
