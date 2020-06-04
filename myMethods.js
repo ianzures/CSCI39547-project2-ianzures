@@ -56,6 +56,15 @@ Array.prototype.myIncludes = function(target,fromIn = 0){
 	return false;
 }
 
+Array.prototype.myIndexOf = function(target, fromIn = 0){
+	for(let i = fromIn; i < this.length; i++){
+		if(this[i] === target){
+			return i;
+		}
+	}
+	return -1;
+}
+
 function testMyMethod(){
 
 	/*TEST MYEACH()
@@ -109,9 +118,7 @@ function myReduce(arg){
 
 
 /*
-function myIndexOf(arg){
 
-}
 
 function myPush(arg){
 }
