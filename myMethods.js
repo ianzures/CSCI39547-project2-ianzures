@@ -37,6 +37,15 @@ Array.prototype.mySome = function(callback){
 	return false;
 }
 
+Array.prototype.myEvery = function(callback){
+	for(let i = 0; i < this.length; i++){
+		if(!callback(this[i])){
+			return false;
+		}
+	}
+	return true;
+}
+
 function testMyMethod(){
 
 	/*TEST MYEACH()
@@ -90,8 +99,7 @@ function myIncludes(target,fromIn = 0){
 
 
 
-function myEvery(arg){
-}
+
 
 function myReduce(arg){
 }
