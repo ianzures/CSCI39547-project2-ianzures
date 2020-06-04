@@ -46,6 +46,16 @@ Array.prototype.myEvery = function(callback){
 	return true;
 }
 
+Array.prototype.myIncludes = function(target,fromIn = 0){
+	while(fromIn < this.length){
+		if(this[fromIn] === target){
+			return true;
+		}
+		fromIn++;
+	}
+	return false;
+}
+
 function testMyMethod(){
 
 	/*TEST MYEACH()
@@ -87,15 +97,7 @@ function testMyMethod(){
 
 
 
-function myIncludes(target,fromIn = 0){
-	while(fromIn < this.length){
-		if(this[fromIn] === target){
-			return true;
-		}
-		fromIn++;
-	}
-	return false;
-}
+
 
 
 
