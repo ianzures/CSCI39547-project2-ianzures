@@ -66,7 +66,7 @@ Array.prototype.myIndexOf = function(target, fromIn = 0){
 }
 
 Array.prototype.myPush = function(element, ... els){
-	for(int i = 0; i < arguments.length; i++){
+	for(let i = 0; i < arguments.length; i++){
 		this[this.length+i] = arguments[i];
 	}
 	return this.length;
@@ -89,38 +89,67 @@ Array.prototype.myReduce = function(callback){
 	return k;
 }
 
-
 function testMyMethod(){
+	let testArray = [0,1,2,3,4,5]
 
-	/*TEST MYEACH()
-	[1,2,3].myEach(function(x){
+	/*******************TEST MYEACH()*********************
+	testArray.myEach(function(x){
 			alert(square(x));
-	}, 1)
-	*/
+	});*/
 
-	/*TEST MYMAP()
-	let k = [1,2,3].myMap(function(x){
-		x * 2;
+	/*******************TEST MYMAP()**********************
+	let mappedArray = testArray.myMap(function(x){
+		return x * 2;
 	});
 
-	for(let i = 0; i < k.length; i++){
-		alert(k[i]);
-	}
-	*/
+	alert(mappedArray.toString());*/
+	
+	/*******************TEST MYFILTER()******************
+	let filtered = testArray.myFilter(num => num % 2 === 0);
+	alert(filtered.toString());	*/
 
-	/*TEST MYFILTER()
-	let arr = ["Trigo","Migo", "Shego"];
-	let filt = arr.myFilter(word => word.length > 4);
-	document.getElementById("demo").innerHTML = filt;
-	*/
-
-	/*TEST MYINCLUDES()
-	let arr2 = [1,2,3,4,5]
-	if(arr2.myIncludes(3)){
-		document.getElementById("demo").innerHTML = "true";
+	/*******************TEST MYSOME()********************
+	if(testArray.mySome(num => num === 6)){
+		alert("True");	
 	}
-	*/
+	else{
+		alert("False");
+	}*/
+	
+	/*******************TEST MYEVERY()********************
+	if(testArray.myEvery(num => num % 2 === 0)){
+		alert("True");	
+	}
+	else{
+		alert("False");
+	}*/
+
+	/*******************TEST MYINCLUDES()****************
+	if(testArray.myIncludes(9)){
+		alert("True");
+	}
+	else{
+		alert("False");
+	}*/
+
+	/*******************TEST MYINDEXOF()****************
+	alert(testArray.myIndexOf(6));*/
+
+	/*******************TEST MYPUSH()*******************
+	alert(testArray.toString());
+	testArray.myPush(6);
+	alert(testArray.toString());*/	
+
+	/*******************TEST MYLASTINDEXOF()****************
+	testArray.myPush(6);
+	testArray.myPush(6);
+	testArray.myPush(7);
+	alert(testArray.myLastIndexOf(6));*/
+
+	/*******************TEST MYREDUCE()****************
+	alert(testArray.myReduce(( accumulator, currentValue ) => accumulator + currentValue));*/
  }
+
 
 
 
